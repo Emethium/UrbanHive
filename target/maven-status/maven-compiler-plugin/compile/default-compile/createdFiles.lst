@@ -1,0 +1,12 @@
+com/urbanhive/dao/MessageDAO.class
+com/urbanhive/model/AbstractModel.class
+com/urbanhive/conf/JPAConfigurationPostgre.class
+com/urbanhive/model/MessageForm.class
+com/urbanhive/dao/AbstractDAO.class
+com/urbanhive/conf/AppWebConfiguration.class
+com/urbanhive/conf/ServletSpringMVC.class
+com/urbanhive/validator/MessageValidator.class
+com/urbanhive/controller/HomeController.class
+com/urbanhive/conf/JPAConfiguration.class
+com/urbanhive/controller/SendController.class
+com/urbanhive/controller/AbstractController.class
