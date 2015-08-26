@@ -13,17 +13,17 @@
 			<form:errors path="name" />
 		</div>
 		<div>
-			<label for="login">Country:</label>
+			<label for="country">Country:</label>
 			<form:input path="country" />
 			<form:errors path="country" />
 		</div>
 		<div>
-			<label for="login">Title:</label>
+			<label for="title">Title:</label>
 			<form:input path="title" />
 			<form:errors path="title" />
 		</div>
 		<div>
-			<label for="login">Body:</label>
+			<label for="messageBody">Body:</label>
 			<form:input path="messageBody" />
 			<form:errors path="messageBody" />
 		</div>

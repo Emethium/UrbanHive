@@ -11,6 +11,8 @@ public abstract class AbstractDAO<M, ID> {
 	protected EntityManager manager;
 	
 	public abstract M findById(long id);
+	
 	public abstract void save(M object);
+	
 	public abstract List<M> list();
 }

@@ -27,6 +27,7 @@ public class MessageForm extends AbstractModel {
 	private String title;
 	
 	/* Getters and Setters */
+	
 	public String getName() {
 		return this.name;
 	}
