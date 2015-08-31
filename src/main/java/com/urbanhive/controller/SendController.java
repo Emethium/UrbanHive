@@ -22,29 +22,29 @@ import com.urbanhive.validator.MessageValidator;
 @Transactional
 @RequestMapping("/message")
 public class SendController extends AbstractController {
-	
+
 	@Autowired
 	private MessageDAO mailMan;
-	
+
 	@InitBinder
 	protected void initBinder(WebDataBinder binder) {
 		binder.setValidator(new MessageValidator());
 	}
-	
+
 	//Won't be available later, just for testing
-	@RequestMapping("/shhitsasecret")
+	@RequestMapping("/secret")
 	public ModelAndView list() {
 		ModelAndView mad = new ModelAndView("/list");
 		mad.addObject("mailman",mailMan.list());
 		return mad;
 	}
-	
+
 	@RequestMapping(value = "/form", name = "add")
 	public ModelAndView form(MessageForm message) {
 		ModelAndView mad = new ModelAndView("/form");
 		return mad;
 	}
-	
+
 	@RequestMapping(method = RequestMethod.POST, name = "createMessage", value = "send")
 	public ModelAndView send(@ModelAttribute("message") @Valid MessageForm message, BindingResult binding,
 			RedirectAttributes redirectAttributes){
@@ -55,7 +55,7 @@ public class SendController extends AbstractController {
 		redirectAttributes.addFlashAttribute("sucess", "Message sent!");
 		return new ModelAndView("redirect:show");
 	}
-	
+
 	@RequestMapping(method = RequestMethod.GET, name = "receive", value = "show")
 	public ModelAndView show() {
 		long index = mailMan.getLastIndex();
@@ -63,6 +63,6 @@ public class SendController extends AbstractController {
 		mad.addObject("hiveForm", mailMan.findById(index));
 		return mad;
 	}
-	
-	
+
+
 }
