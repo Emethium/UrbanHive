@@ -4,29 +4,35 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
+@Table
 public class MessageForm extends AbstractModel {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotBlank
+	
 	private String name;
 	
-	@NotBlank
+	
 	private String country;
 	
-	@NotBlank
+	
 	private String messageBody;
 	
-	// Can be left empty
+	/*
+	 * Can be left empty
+	 */
 	private String title;
 	
-	/* Getters and Setters */
+	
+	/*
+	 * Getters and Setters 
+	 */
 	
 	public String getName() {
 		return this.name;

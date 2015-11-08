@@ -1,11 +1,43 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <html>
 <head>
-<title>Página Inicial</title>
+<title><spring:message code="message.form.header" /></title>
 </head>
 <body>
-	<h1>UUUUUUUUUUUUURBAAAAAAAAAAN HIIIIIIIIIIIIIIIVE!</h1>
+	<form:form action="${spring:mvcUrl('createMessage').build()}"
+		method="post" commandName="messageForm">
+		<div>
+			<label for="name"> <spring:message code="message.form.name" />
+			</label>
+			<form:input path="name" />
+			<form:errors path="name" />
+		</div>
+		<div>
+			<label for="country"> <spring:message
+					code="message.form.country" />
+			</label>
+			<form:input path="country" />
+			<form:errors path="country" />
+		</div>
+		<div>
+			<label for="title"> <spring:message
+					code="message.form.title" />
+			</label>
+			<form:input path="title" />
+			<form:errors path="title" />
+		</div>
+		<div>
+			<label for="messageBody"> <spring:message
+					code="message.form.body" />
+			</label>
+			<form:input path="messageBody" />
+			<form:errors path="messageBody" />
+		</div>
+		
+		<div>
+			<input type="submit" value="send" />
+		</div>
+	</form:form>
 </body>
 </html>

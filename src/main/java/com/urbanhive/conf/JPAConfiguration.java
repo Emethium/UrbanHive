@@ -37,7 +37,7 @@ public class JPAConfiguration {
 	public DataSource datasource(Environment environment) {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-		dataSource.setUrl("jdbc:mysql://localhost:3306/UrbanHive");
+		dataSource.setUrl("jdbc:mysql://localhost:3306/urbanhive");
 		dataSource.setUsername("urbanhive");
 		dataSource.setPassword("");
 		return dataSource;
