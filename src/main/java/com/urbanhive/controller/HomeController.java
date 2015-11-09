@@ -52,7 +52,7 @@ public class HomeController extends AbstractController {
 			return form(message);
 		}
 		mailMan.save(message);
-		redirectAttributes.addFlashAttribute("sucess", "Message sent!");
+		redirectAttributes.addFlashAttribute("sucess", "");
 		return new ModelAndView("redirect:show");
 	}
 
@@ -60,7 +60,7 @@ public class HomeController extends AbstractController {
 	public ModelAndView show() {
 		long index = mailMan.getLastIndex();
 		ModelAndView mad = new ModelAndView("home/show");
-		mad.addObject("messageBody", mailMan.findById(index));
+		mad.addObject("messageBody", mailMan.findById(index-1));
 		return mad;
 	}
 

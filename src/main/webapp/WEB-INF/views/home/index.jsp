@@ -48,41 +48,85 @@
 	<!-- /#main-menu -->
 	<!-- Main Menu End -->
 
-	
-	
-	
-	<form:form action="${spring:mvcUrl('createMessage').build()}"
-		method="post" commandName="messageForm">
-		<div>
-			<label for="name"> <spring:message code="message.form.name" />
-			</label>
-			<form:input path="name" />
-			<form:errors path="name" />
-		</div>
-		<div>
-			<label for="country"> <spring:message
-					code="message.form.country" />
-			</label>
-			<form:input path="country" />
-			<form:errors path="country" />
-		</div>
-		<div>
-			<label for="title"> <spring:message code="message.form.title" />
-			</label>
-			<form:input path="title" />
-			<form:errors path="title" />
-		</div>
-		<div>
-			<label for="messageBody"> <spring:message
-					code="message.form.body" />
-			</label>
-			<form:input path="messageBody" />
-			<form:errors path="messageBody" />
-		</div>
+	<!-- Page Top Section -->
+	<section id="page-top" class="section-style"
+		data-background-image="${background}">
+		<div class="pattern height-resize">
+			<div class="container">
+				<h1 class="site-title">Urbanhive</h1>
+				<!-- /.site-title -->
+				<h2 class="section-title">
+					<span> Have a thought. Share with the world. </span>
+				</h2>
+				<!-- /.section-name -->
+				<h3 class="section-name">
+					<br><form:form id="contact-form"
+						action="${spring:mvcUrl('createMessage').build()}" method="post"
+						commandName="messageForm">
+						<div class="contact-box-hide">
+							<div class="col-sm-6">
+								<form:input type="text" class="form-control" path="name"
+									placeholder="YOUR NAME" />
+								<form:errors path="name" />
+							</div>
+							<div class="col-sm-6">
+								<form:input type="text" class="form-control" path="country"
+									placeholder="THE COUNTRY YOU RESIDE" />
+								<form:errors path="country" />
+							</div>
+							<div class="col-sm-10">
+								<form:input type="text" class="form-control" path="title"
+									placeholder="GIVE US A TITLE" />
+								<form:errors path="title" />
+							</div>
+							<div class="col-sm-10">
+								<form:textarea class="form-control" rows="5" path="messageBody"
+									placeholder="HERE GOES YOUR MESSAGE" />
+								<form:errors path="messageBody" />
+							</div>
+							<div class="col-sm-2">
+								<button id="contact-submit" class="btn custom-btn col-xs-12"
+									type="submit" value="send" name="submit">
+									<a href=""></a><i class="fa fa-rocket"></i>
+								</button>
+								<span id="contact-loading" class="btn custom-btn col-xs-12">
+									<i class="fa fa-refresh fa-spin"></i>
+								</span>
+							</div>
 
-		<div>
-			<input type="submit" value="send" />
+						</div>
+						<!-- /.contact-box-hide -->
+						<div class="contact-message"></div>
+					</form:form>
+
+				</h3>
+				<!-- /.Section-title  -->
+			</div>
+			<!-- /.container -->
 		</div>
-	</form:form>
+		<!-- /.pattern -->
+	</section>
+	<!-- /#page-top -->
+	<!-- Page Top Section  End -->
+
+
+
+	<!-- jQuery Library -->
+	<script type="text/javascript"
+		src="/src/main/resources/assets/js/jquery-2.1.0.min.js"></script>
+	<!-- Modernizr js -->
+	<script type="text/javascript"
+		src="/src/main/resources/assets/js/modernizr-2.8.0.min.js"></script>
+	<!-- Plugins -->
+	<script type="text/javascript"
+		src="/src/main/resources/assets/js/plugins.js"></script>
+	<!-- Custom JavaScript Functions -->
+	<script type="text/javascript"
+		src="/src/main/resources/assets/js/functions.js"></script>
+	<!-- Custom JavaScript Functions -->
+	<script type="text/javascript"
+		src="/src/main/resources/assets/js/jquery.ajaxchimp.min.js"></script>
+
+
 </body>
 </html>

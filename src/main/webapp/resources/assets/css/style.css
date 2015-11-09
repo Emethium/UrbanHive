@@ -110,7 +110,7 @@ a:focus{
 	text-align:center;
 	text-transform:uppercase;
 	font-weight:300;
-	font-size:80px;
+	font-size:60px;
 }
 .section-description{
 	font-weight:300;
@@ -811,7 +811,7 @@ form.news-letter .btn:hover{
 #contact-form textarea.form-control{
 	height:130px;
 	border-top:0px solid transparent;
-	padding-top: 20px;
+	padding-top: 40px;
 }
 #contact-form  .btn{
 	font-size:50px;
