@@ -1,5 +1,8 @@
 package com.urbanhive.controller;
 
+import java.time.Instant;
+import java.util.Random;
+
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
@@ -31,11 +34,11 @@ public class HomeController extends AbstractController {
 		binder.setValidator(new MessageValidator());
 	}
 
-	//Won't be available later, just for testing
+	// Won't be available later, just for testing
 	@RequestMapping("/secret")
 	public ModelAndView list() {
 		ModelAndView mad = new ModelAndView("home/list");
-		mad.addObject("mailman",mailMan.list());
+		mad.addObject("mailman", mailMan.list());
 		return mad;
 	}
 
@@ -47,8 +50,8 @@ public class HomeController extends AbstractController {
 
 	@RequestMapping(method = RequestMethod.POST, name = "createMessage", value = "send")
 	public ModelAndView send(@ModelAttribute("message") @Valid MessageForm message, BindingResult binding,
-			RedirectAttributes redirectAttributes){
-		if(binding.hasErrors()) {
+			RedirectAttributes redirectAttributes) {
+		if (binding.hasErrors()) {
 			return form(message);
 		}
 		mailMan.save(message);
@@ -59,10 +62,12 @@ public class HomeController extends AbstractController {
 	@RequestMapping(method = RequestMethod.GET, name = "receive", value = "show")
 	public ModelAndView show() {
 		long index = mailMan.getLastIndex();
+		Random generator = new Random();
+		Instant seed = Instant.now();
+		generator.setSeed(seed.toEpochMilli());
 		ModelAndView mad = new ModelAndView("home/show");
-		mad.addObject("messageBody", mailMan.findById(index-1));
+		mad.addObject("messageBody", mailMan.findById((long)(generator.nextInt((int)index-1)+1)));
 		return mad;
 	}
-
 
 }

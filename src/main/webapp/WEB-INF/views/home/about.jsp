@@ -17,21 +17,11 @@
 <link href="${style}" rel="stylesheet">
 <spring:url value="/resources/images/background/page-top.jpg" var="back" />
 
-<title><spring:message code="message.show.header" /></title>
+<title><spring:message code="message.about.header" /></title>
 
 </head>
 <body background="${back}">
-	${sucess}
-	<spring:hasBindErrors name="messageForm">
-		<ul>
-			<c:forEach var="error" items="${errors.allErrors }">
-				<li>${error.code }-${error.field}</li>
-			</c:forEach>
-		</ul>
-	</spring:hasBindErrors>
-
-
-
+	
 	<div id="main-menu" class="navbar navbar-default navbar-fixed-top"
 		role="navigation">
 
@@ -68,14 +58,16 @@
 				<h1 class="site-title">Urbanhive</h1>
 				<!-- /.site-title -->
 				<h2 class="section-title">
-					<span> A wild message appeared! </span>
+					<span> About</span>
 				</h2>
 				<!-- /.section-name -->
 				<h3 class="section-name">
-					<br><span><spring:message code="message.show.name" /></span> <span>${messageBody.name }</span>
-					<br><span><spring:message code="message.show.country" /></span> <span>${messageBody.country }</span>
-					<br><span><spring:message code="message.show.title" /></span> <span>${messageBody.title }</span>
-					<br><span><spring:message code="message.show.body" /></span> <span>${messageBody.messageBody }</span>
+					<br><span>A very, very simple web application I was forced to do</span>
+					<span>in order to complete a discipline at my University.</span>
+					<span>Send random people random messages with your hearts' content.</span>
+					<span>And I'm not checking for swear words, just saying.</span>
+					<br><br><br>
+					<span>2015-????. Nikolas Vago Serafini. Whatever rights reserved.</span>
 					<br><br><br><br><br><br><br><br><br><br>
 				</h3>
 				<!-- /.Section-title  -->

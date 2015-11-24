@@ -18,9 +18,31 @@
 <spring:url value="/resources/images/background/page-top.jpg" var="back" />
 
 <title><spring:message code="message.form.header" /></title>
+
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	//var class = ".main";
+	$('#incfont').click(function(){
+		curSize= parseInt($('body.main').css('font-size')) + 2;
+		if(curSize<=40)
+			$('body.main').css('font-size', curSize);
+	});
+	$('#decfont').click(function(){
+		curSize= parseInt($('.main').css('font-size')) - 2;
+		if(curSize>=12)
+			$('body.main').css('font-size', curSize);
+	 });
+});
+
+</script>
+
+
 </head>
 
-<body background="${back}">
+<body background="${back}" class="main">
+
+
 	<div id="main-menu" class="navbar navbar-default navbar-fixed-top"
 		role="navigation">
 
@@ -31,15 +53,17 @@
 				<span class="sr-only">Toggle navigation</span> <i class="fa fa-bars"></i>
 			</button>
 			<!-- /.navbar-toggle -->
-
 		</div>
 		<!-- /.navbar-header -->
 
 		<nav class="collapse navbar-collapse">
 			<!-- Main navigation -->
 			<ul id="headernavigation" class="nav navbar-nav">
+				<a href="#" id="incfont">A+</a>
+				<a href="#" id="decfont">A-</a>
 				<li class="active"><a href="${spring:mvcUrl("add").build()}">Home</a></li>
-				<li><a href="#about">About</a></li>
+				<li class="active"><a href="${spring:mvcUrl("about").build()}">About</a></li>
+
 			</ul>
 			<!-- /.nav .navbar-nav -->
 		</nav>
