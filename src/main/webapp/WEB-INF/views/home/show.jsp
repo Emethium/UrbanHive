@@ -18,9 +18,27 @@
 <spring:url value="/resources/images/background/page-top.jpg" var="back" />
 
 <title><spring:message code="message.show.header" /></title>
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	//var class = ".main";
+	$('#incfont').click(function(){
+		curSize= parseInt($('#main').css('font-size')) + 2;
+		if(curSize<=40)
+			$('#main').css('font-size', curSize);
+
+	});
+	$('#decfont').click(function(){
+		curSize= parseInt($('.#main').css('font-size')) - 2;
+		if(curSize>=12)
+			$('#main').css('font-size', curSize);
+	 });
+});
+
+</script>
 
 </head>
-<body background="${back}">
+<body background="${back}" id="main">
 	${sucess}
 	<spring:hasBindErrors name="messageForm">
 		<ul>
@@ -49,6 +67,8 @@
 		<nav class="collapse navbar-collapse">
 			<!-- Main navigation -->
 			<ul id="headernavigation" class="nav navbar-nav">
+				<a href="#" id="incfont">A+</a>
+				<a href="#" id="decfont">A-</a>
 				<li class="active"><a href="${spring:mvcUrl("add").build()}">Home</a></li>
 				<li class="active"><a href="${spring:mvcUrl("about").build()}">About</a></li>
 			</ul>

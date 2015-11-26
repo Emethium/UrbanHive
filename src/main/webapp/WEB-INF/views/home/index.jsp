@@ -25,8 +25,11 @@ $(document).ready(function() {
 	//var class = ".main";
 	$('#incfont').click(function(){
 		curSize= parseInt($('body.main').css('font-size')) + 2;
-		if(curSize<=40)
+		if(curSize<=40) {
 			$('body.main').css('font-size', curSize);
+			document.getElementById('contact-message').style.fontSize = curSize + 2;
+		}
+
 	});
 	$('#decfont').click(function(){
 		curSize= parseInt($('.main').css('font-size')) - 2;
